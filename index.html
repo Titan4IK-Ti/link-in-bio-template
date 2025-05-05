@@ -1,13 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Links</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підтримка</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main id="page-props" class="page active">
+        <header class="page-header">
+            <h1>ЗБІР НА КВАРТИРУ</h1>
+            <p>Оберіть зручний спосіб</p>
+        </header>
+
+        <div class="content-wrapper">
+            <section class="card">
+                <div class="card-header">
+                    <img src="monobank_logo.png" alt="Monobank Logo" class="bank-logo" onerror="this.style.display='none'">
+                    <h2>Monobank</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>МоноБанка</strong></p>
+                    <div class="detail-item">
+                        <label>Посилання на банку:</label>
+                        <div class="copy-container">
+                            <a href="https://send.monobank.ua/jar/AGvsu9T5jn" target="_blank" rel="noopener noreferrer" title="Перейти за посиланням Monobank">
+                                <span id="mono-card">https://send.monobank.ua/jar/AGvsu9T5jn</span>
+                            </a>
+                            <button class="copy-btn" data-clipboard-target="#mono-card" title="Копіювати посилання">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                 <div class="card-header">
+                     <img src="privatbank_logo.png" alt="Privatbank Logo" class="bank-logo" onerror="this.style.display='none'">
+                     <h2>Privatbank</h2>
+                 </div>
+                 <div class="card-body">
+                    <p><strong>ПриватКонверт</strong></p>
+                    <div class="detail-item">
+                        <label>Посилання на конверт:</label>
+                        <div class="copy-container">
+                            <a href="https://www.privat24.ua/send/gvwqa" target="_blank" rel="noopener noreferrer" title="Перейти за посиланням Privatbank">
+                                <span id="privat-card">https://www.privat24.ua/send/gvwqa</span>
+                            </a>
+                            <button class="copy-btn" data-clipboard-target="#privat-card" title="Копіювати посилання">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <section class="card">
+                 <div class="card-header">
+                     <img src="pumb_logo.png" alt="PUMB Logo" class="bank-logo" onerror="this.style.display='none'">
+                     <h2>ПУМБ</h2>
+                 </div>
+                 <div class="card-body">
+                    <p><strong>МаніБокс</strong></p>
+                    <div class="detail-item">
+                        <label>Посилання на манібокс:</label>
+                        <div class="copy-container">
+                             <a href="https://mobile-app.pumb.ua/dRuoMo44y4BjyzkD7" target="_blank" rel="noopener noreferrer" title="Перейти за посиланням ПУМБ">
+                                <span id="pumb-card">https://mobile-app.pumb.ua/dRuoMo44y4BjyzkD7</span>
+                            </a>
+                            <button class="copy-btn" data-clipboard-target="#pumb-card" title="Копіювати посилання">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-coins crypto-icon"></i> <h2>Криптовалюта</h2>
+                </div>
+                <div class="card-body">
+                    <div class="detail-item">
+                         <label for="crypto-select">Оберіть криптовалюту:</label>
+                         <select id="crypto-select" class="crypto-select">
+                             <option value="usdt">USDT (TRC-20)</option>
+                             <option value="ton">Toncoin (TON)</option>
+                             <option value="eth">Ethereum (ERC-20)</option>
+                             <option value="btc">Bitcoin (BTC)</option>
+                         </select>
+                    </div>
+
+                    <p><strong>Мережа:</strong> <span id="crypto-network">TRC-20</span></p>
+                    <div class="detail-item">
+                        <label>Адреса гаманця:</label>
+                        <div class="copy-container">
+                            <span id="crypto-wallet" class="wallet-address">TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+                            <button id="crypto-copy-btn" class="copy-btn" data-clipboard-target="#crypto-wallet" title="Копіювати адресу">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="qr-code-container">
+                        <p><strong>Або скануйте QR-код:</strong></p>
+                        <img id="crypto-qr" src="https://placehold.co/180x180/ffffff/000000?text=QR+Code" alt="QR Code for Wallet" class="qr-code">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <main id="page-about" class="page">
+        <header class="page-header">
+            <h1>Про сайт</h1>
+        </header>
+        <div class="content-wrapper">
+            <p>Сайт — це соціальний експеримент, мета якого — з’ясувати, скільки людей реагує на вуличні оголошення.</p>
+            <p>50% коштів, зібраних у межах цього експерименту, будуть передані Сергію Стерненку на проєкт "RUSORIZ". Усі докази переказів будуть опубліковані в Telegram-каналі <a href="https://t.me/donateapt" target="_blank" rel="noopener noreferrer">@donateapt</a>, де також можна знайти додаткову інформацію про хід експерименту.</p>
+
+            <h3>ДОШКА ПОШАНИ</h3>
+            <p>Дошка пошани — це список людей, які зробили внесок у проєкт. У ній ви можете прорекламувати свій Telegram-канал, Instagram або інший ресурс.</p>
+            <p><strong style="color: red;">Заборонено:</strong> публікувати будь-яку рекламу, що порушує законодавство України. У разі порушення текст не буде опублікований.</p>
+            <p>Якщо ви хочете залишитися анонімними, вкажіть слово "анон" у коментарі до платежу (через «Банку» або інший спосіб оплати).</p>
+            <p>Уточнити деталі можна в коментарях під постом у Telegram-каналі <a href="https://t.me/donateapt" target="_blank" rel="noopener noreferrer">@donateapt</a>.</p>
+        </div>
+    </main>
+
+    <main id="page-honor" class="page">
+        <header class="page-header">
+            <h1>Дошка Пошани</h1>
+            <p>Дякуємо за вашу підтримку!</p>
+        </header>
+        <div class="content-wrapper">
+
+            <h3 class="section-title">ТОП-10 Донатерів</h3>
+            <div id="top-donors-list">
+                <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">1.</span>
+                        <span class="donor-name">Олена П.</span>
+                        <span class="donor-amount">10,000 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Підписуйтесь на мій кулінарний блог @olena_cooks!"
+                    </div>
+                </div>
+                <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">2.</span>
+                        <span class="donor-name">Максим К.</span>
+                        <span class="donor-amount">8,500 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Продаю гараж в центрі міста. Тел: 050-XXX-XX-XX"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">3.</span>
+                        <span class="donor-name">Софія Л.</span>
+                        <span class="donor-amount">7,000 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Шукаю моделей для TFP фотосесії! Мій інстаграм @sophia_photo"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">4.</span>
+                        <span class="donor-name">Артем Б.</span>
+                        <span class="donor-amount">6,500 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Найкращий хостинг для ваших сайтів - examplehosting.ua"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">5.</span>
+                        <span class="donor-name">Анна М.</span>
+                        <span class="donor-amount">5,000 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Ремонт комп'ютерів швидко та якісно! Звертайтесь @pc_master"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">6.</span>
+                        <span class="donor-name">Дмитро Ш.</span>
+                        <span class="donor-amount">4,800 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Анонімно. Дякую за вашу справу!"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">7.</span>
+                        <span class="donor-name">Вікторія З.</span>
+                        <span class="donor-amount">4,500 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Розробка сайтів під ключ - @webdev_victoria"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">8.</span>
+                        <span class="donor-name">Назар Т.</span>
+                        <span class="donor-amount">4,200 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "ЗСУ топ!"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">9.</span>
+                        <span class="donor-name">Ірина Г.</span>
+                        <span class="donor-amount">4,000 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Підтримаємо наших!"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-rank">10.</span>
+                        <span class="donor-name">Роман В.</span>
+                        <span class="donor-amount">3,900 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Мій телеграм канал про інвестиції @invest_roman"
+                    </div>
+                </div>
+                </div>
+
+            <h3 class="section-title">Донатери від 3000 грн</h3>
+            <div id="significant-donors-list">
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-name">Андрій С.</span>
+                        <span class="donor-amount">3,500 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Дякую за ініціативу!"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-name">Катерина Д.</span>
+                        <span class="donor-amount">3,200 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Наближаємо перемогу разом!"
+                    </div>
+                </div>
+                <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-name">Олег Ф.</span>
+                        <span class="donor-amount">3,150 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Реклама мого каналу про рибалку @fishing_oleg"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-name">Юлія Р.</span>
+                        <span class="donor-amount">3,100 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "Слава Україні!"
+                    </div>
+                </div>
+                 <div class="donor-entry card">
+                    <div class="donor-info">
+                        <span class="donor-name">Ігор Я.</span>
+                        <span class="donor-amount">3,000 грн</span>
+                    </div>
+                    <div class="donor-message">
+                        "На каву для ЗСУ."
+                    </div>
+                </div>
+                </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-page="page-props">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Реквізити</span>
+        </button>
+        <button class="nav-item" data-page="page-about">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Про сайт</span>
+        </button>
+        <button class="nav-item" data-page="page-honor">
+            <i class="fa-solid fa-trophy"></i> <span>Дошка пошани</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
 </html>
